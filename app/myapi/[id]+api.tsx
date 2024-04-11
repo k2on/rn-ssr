@@ -10,7 +10,7 @@ export function GET(request: Request) {
     `
   const html = readFileSync("dist/server/mydynamic/[id].html")
       .toString()
-      .replace("></title>", `Your var: ${id}`)
+      .replace("></title>", `>Your var: ${id}</title>`)
       .replace(FINDER, FINDER + meta);
   return new Response(html, { headers: { "Content-Type": "text/html" }});
 }
